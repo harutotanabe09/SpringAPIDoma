@@ -1,0 +1,68 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.6.RELEASE'
+	id 'java'
+	id 'com.diffplug.gradle.spotless' version '3.23.0'
+}
+task copyDomaResources(type: Sync)  {
+    from sourceSets.main.resources.srcDirs
+    println 'SQLファイルのコピー元'
+    println sourceSets.main.resources.srcDirs
+    into compileJava.destinationDir
+    println 'SQLファイルのコピー先'
+    println compileJava.destinationDir
+    include 'doma.compile.config'
+    include 'META-INF/**/*.sql'
+    include 'META-INF/**/*.script'
+}
+
+compileJava {
+    dependsOn copyDomaResources
+    options.encoding = 'UTF-8'
+}
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'rest.api'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+// コード整形
+spotless {
+    java {
+        googleJavaFormat('1.6')
+    }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+
+	// Databese
+	runtimeOnly 'org.postgresql:postgresql'
+
+	// Library
+	implementation 'org.flywaydb:flyway-core'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// ORM
+	annotationProcessor 'org.seasar.doma:doma:2.24.0'
+	implementation 'org.seasar.doma:doma:2.24.0'
+	compile group: 'org.seasar.doma.boot', name: 'doma-spring-boot-starter', version: '1.1.1'
+
+
+    // Swagger
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+
+}
