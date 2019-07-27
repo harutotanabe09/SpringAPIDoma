@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.1.6.RELEASE'
 	id 'java'
 	id 'com.diffplug.gradle.spotless' version '3.23.0'
+	id 'com.google.cloud.tools.jib' version '1.4.0'
 }
 task copyDomaResources(type: Sync)  {
     from sourceSets.main.resources.srcDirs
@@ -41,6 +42,7 @@ spotless {
         googleJavaFormat('1.6')
     }
 }
+
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
