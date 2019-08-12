@@ -18,12 +18,19 @@
 
 ・OpenAPI化している
 
-## Swagger
-
-・OpenAPI化している
-
 ## できていないこと
 
-・jibの設定
+・Jenkinsでの自動CI/DIデプロイ設定
 
+## Gitのバージョン表示
+
+actuatorとプラグインを使う
+id "com.gorylenko.gradle-git-properties" version "1.5.1"
+
+http://localhost:8080/actuator/info
 ・
+## Dokcer-Compose up
+
+docker-compose up はDokcerコマンドの引数を設定できるイメージ
+あくめでDockerのイメージファイルは個々で用意が必要
+docker-compose でサービス名つけると、Docker内の名前解決が可能

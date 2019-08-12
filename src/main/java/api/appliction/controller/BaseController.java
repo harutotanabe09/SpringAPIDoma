@@ -1,14 +1,12 @@
 package api.appliction.controller;
 
-import java.util.Locale;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-
 import api.appliction.api.resource.DefaultResourceFactoryImpl;
 import api.appliction.api.resource.ResourceFactory;
 import api.appliction.utils.MessageUtils;
+import java.util.Locale;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 public class BaseController {
 
@@ -18,7 +16,7 @@ public class BaseController {
 
   @Bean
   public ResourceFactory resourceFactory() {
-      return new DefaultResourceFactoryImpl();
+    return new DefaultResourceFactoryImpl();
   }
 
   /**

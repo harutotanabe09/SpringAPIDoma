@@ -3,6 +3,7 @@ plugins {
 	id 'java'
 	id 'com.diffplug.gradle.spotless' version '3.23.0'
 	id 'com.google.cloud.tools.jib' version '1.4.0'
+	id "com.gorylenko.gradle-git-properties" version "1.5.1"
 }
 task copyDomaResources(type: Sync)  {
     from sourceSets.main.resources.srcDirs
@@ -35,6 +36,9 @@ sourceCompatibility = '1.8'
 repositories {
 	mavenCentral()
 }
+springBoot {
+	buildInfo()
+}
 
 // コード整形
 spotless {
@@ -42,7 +46,6 @@ spotless {
         googleJavaFormat('1.6')
     }
 }
-
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
@@ -61,7 +64,6 @@ dependencies {
 	annotationProcessor 'org.seasar.doma:doma:2.24.0'
 	implementation 'org.seasar.doma:doma:2.24.0'
 	compile group: 'org.seasar.doma.boot', name: 'doma-spring-boot-starter', version: '1.1.1'
-
 
     // Swagger
 	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'

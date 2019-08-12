@@ -1,5 +1,6 @@
 package api.appliction.entity;
 
+import api.appliction.entity.dto.DomaDtoImpl;
 import lombok.Getter;
 import lombok.Setter;
 import org.seasar.doma.Entity;
@@ -7,8 +8,6 @@ import org.seasar.doma.GeneratedValue;
 import org.seasar.doma.GenerationType;
 import org.seasar.doma.Id;
 import org.seasar.doma.Table;
-
-import api.appliction.entity.dto.DomaDtoImpl;
 
 @Table(name = "categories")
 @Entity

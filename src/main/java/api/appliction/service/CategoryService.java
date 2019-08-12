@@ -1,10 +1,9 @@
 package api.appliction.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import api.appliction.dao.CategoryDao;
 import api.appliction.entity.Category;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class CategoryService {

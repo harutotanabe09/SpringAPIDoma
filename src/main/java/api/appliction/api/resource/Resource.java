@@ -1,8 +1,7 @@
 package api.appliction.api.resource;
 
-import java.util.List;
-
 import api.appliction.entity.dto.Dto;
+import java.util.List;
 
 public interface Resource {
 
