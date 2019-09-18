@@ -17,7 +17,6 @@ public abstract class DomaDtoImpl implements Dto, Serializable {
   String createdBy;
 
   // 作成日時
-
   LocalDateTime createdAt;
 
   // 更新者

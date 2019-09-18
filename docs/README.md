@@ -18,9 +18,7 @@
 
 ・OpenAPI化している
 
-## できていないこと
-
-・Jenkinsでの自動CI/DIデプロイ設定
+・http://XXXXX/swagger-ui.html
 
 ## Gitのバージョン表示
 
@@ -34,3 +32,19 @@ http://localhost:8080/actuator/info
 docker-compose up はDokcerコマンドの引数を設定できるイメージ
 あくめでDockerのイメージファイルは個々で用意が必要
 docker-compose でサービス名つけると、Docker内の名前解決が可能
+
+##  課題
+
+・　Jenkinsでの自動CI/DIデプロイ設定
+
+　　→　Sonarqubeはなんぞや。
+
+https://medium.com/@khandelwal12nidhi/ci-cd-with-jenkins-and-ansible-e9163d4a6e82
+
+・　JenkinsからBuildしたファイルをDockerでJarファイルで実行する方法
+
+・　DockerHubのサーバの作り方
+
+・　Kubernates
+
+・　
